@@ -10,7 +10,7 @@ api_key = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=api_key)
 
 # Create the model instance
-model = genai.GenerativeModel("gemini-1.5-flash")  # or "gemini-1.5-pro" for more reasoning
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 def ask_gemini(question: str) -> str:
     """Send a question to the Gemini LLM and return the response."""
@@ -21,7 +21,7 @@ def ask_gemini(question: str) -> str:
         return f"Error: {e}"
 
 if __name__ == "__main__":
-    print("🤖 Gemini Chatbot (type 'quit' to exit)\n")
+    print("Gemini Chatbot (type 'quit' to exit)\n")
     while True:
         user_input = input("You: ")
         if user_input.lower() in {"quit", "exit"}:
@@ -29,4 +29,5 @@ if __name__ == "__main__":
             break
         answer = ask_gemini(user_input)
         print(f"Gemini: {answer}\n")
+
 
